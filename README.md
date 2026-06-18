@@ -1,53 +1,45 @@
-# omnitask-hud 
+# omnitask-hud
 
 A sleek, borderless, multi-threaded desktop automation console built with Python and Tkinter. This client serves as a transient HUD (Heads-Up Display) for dispatching background automation tasks to a local orchestration server.
 
----
+The project optimizes desktop workflows using an asynchronous threading model that decouples UI rendering from outbound network communication, enabling zero-latency task dispatching.
 
-##  Features
+## Key Technical Features
 
-* **Stealth UI Mode:** Toggle the interface anywhere instantly using global system hotkeys (`Ctrl + Q`), hiding it seamlessly when not in use.
-* **Non-Blocking Architecture:** Built on top of Python's `threading` library to isolate API requests, preventing UI freezing during asynchronous background tasks.
-* **Zero-Admin Overhead:** Utilizes safe, user-level background hooks to bypass restrictive Windows administrative privilege requirements.
-* **Auto-Refocus State Machine:** Input fields automatically clear and refocus immediately after a command is sent for rapid, successive workflows.
-* **Modern Aesthetics:** A borderless, dark-mode transient design that fits perfectly into a power-user's desktop environment.
+- **Stealth UI Mode:** Toggle the interface anywhere instantly using global system hotkeys (`Ctrl + Q`), hiding it seamlessly when not in use.
+- **Non-Blocking Architecture:** Built on top of Python's `threading` library to isolate API requests, preventing UI freezing during asynchronous background tasks.
+- **Zero-Admin Overhead:** Utilizes safe, user-level background hooks to bypass restrictive Windows administrative privilege requirements.
+- **Auto-Refocus State Machine:** Input fields automatically clear and refocus immediately after a command is sent for rapid, successive workflows.
+- **Modern Aesthetics:** A borderless, dark-mode transient design that fits perfectly into a power-user's desktop environment.
 
----
+## Tech Stack
 
-##  Architecture & Tech Stack
+- **Language:** Python 3
+- **UI Framework:** Tkinter
+- **Concurrency:** `threading`
+- **Hotkey Interceptor:** `pynput`
+- **Network Layer:** `requests`
 
-* **Language:** Python 3
-* **UI Framework:** Tkinter (Native lightweight desktop interface rendering)
-* **Concurrency:** `threading` (Asynchronous task dispatching)
-* **Hotkey Interceptor:** `pynput` (Global system-wide keyboard listener)
-* **Network Layer:** `requests` (REST API client handling orchestration server communication)
+## How It Works
 
----
+The system takes global system-wide hotkeys via low-level event listeners, toggles the transient HUD into view, accepts user commands, dispatches payloads to a local orchestration server via isolated daemon threads, and resets the input focus state machine instantly to maintain a locked 60 FPS.
 
-##  Setup and Installation
+## Setup and Installation
 
 ### 1. Install dependencies
 
-Run this command in your terminal:
+Run this command in your environment to ensure the required packages are installed:
 
-```bash
-pip install requests pynput
-2. Clone the repository
-Run this command in your terminal:
+<pre><code>pip install requests pynput</code></pre>
 
-Bash
-git clone [https://github.com/YOUR_USERNAME/omnitask-hud.git](https://github.com/YOUR_USERNAME/omnitask-hud.git)
-3. Launch the HUD application
-Run this command in your terminal:
+### 2. Clone the repository
 
-Bash
-python frontend.py
+Clone the workspace files into your local desktop environment:
 
----
+<pre><code>git clone https://github.com/YOUR_USERNAME/omnitask-hud.git</code></pre>
 
- Key Technical Insights for Reviewers
-1. Asynchronous Task Dispatching
-Traditional Tkinter applications freeze when making network requests because they run on a single main thread. omnitask-hud spins up isolated daemon threads for every outbound payload, ensuring the user interface remains responsive at a locked 60 FPS.
+### 3. Launch the HUD application
 
-2. Low-Level Event Hooking
-By utilizing pynput to listen to global keyboard events, the application hooks into operating system inputs natively. This allows user macros to trigger the HUD even when the application is minimized or unfocused.
+Execute the main script sequentially to initialize the interface architecture, bind the background event hooks, and begin the automation dispatch loop:
+
+<pre><code>python frontend.py</code></pre>
