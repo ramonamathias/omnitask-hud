@@ -2,8 +2,6 @@
 
 A sleek, borderless, multi-threaded desktop automation console built with Python and Tkinter. This client serves as a transient HUD (Heads-Up Display) for dispatching background automation tasks to a local orchestration server.
 
-The project optimizes desktop workflows using an asynchronous threading model that decouples UI rendering from outbound network communication, enabling zero-latency task dispatching.
-
 ## Key Technical Features
 
 - **Stealth UI Mode:** Toggle the interface anywhere instantly using global system hotkeys (`Ctrl + Q`), hiding it seamlessly when not in use.
