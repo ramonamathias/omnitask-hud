@@ -24,25 +24,28 @@ A sleek, borderless, multi-threaded desktop automation console built with Python
 
 ---
 
-##  Getting Started
+##  Setup and Installation
 
-### Prerequisites
+### 1. Install dependencies
 
-Ensure you have Python 3 installed on your system. Then, install the required dependencies:
+Run this command in your terminal:
 
 ```bash
 pip install requests pynput
-Installation & Execution
-Clone this repository:
+2. Clone the repository
+Run this command in your terminal:
 
 Bash
 git clone [https://github.com/YOUR_USERNAME/omnitask-hud.git](https://github.com/YOUR_USERNAME/omnitask-hud.git)
-cd omnitask-hud
-Launch the HUD application:
+3. Launch the HUD application
+Run this command in your terminal:
 
 Bash
 python frontend.py
-💡 Key Technical Insights for Reviewers
+
+---
+
+ Key Technical Insights for Reviewers
 1. Asynchronous Task Dispatching
 Traditional Tkinter applications freeze when making network requests because they run on a single main thread. omnitask-hud spins up isolated daemon threads for every outbound payload, ensuring the user interface remains responsive at a locked 60 FPS.
 
