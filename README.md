@@ -14,7 +14,7 @@ A sleek, borderless, multi-threaded desktop automation console built with Python
 
 ---
 
-## 🛠️ Architecture & Tech Stack
+##  Architecture & Tech Stack
 
 * **Language:** Python 3
 * **UI Framework:** Tkinter (Native lightweight desktop interface rendering)
@@ -24,7 +24,7 @@ A sleek, borderless, multi-threaded desktop automation console built with Python
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
